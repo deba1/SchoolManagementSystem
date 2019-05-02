@@ -9,6 +9,7 @@ namespace SchoolManagementSystem.Main
 {
     public static class Globals
     {
-        
+        public static UserCredential CUR_USER { get; set; }
+
     }
 }

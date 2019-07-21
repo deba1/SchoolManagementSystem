@@ -13,6 +13,7 @@ namespace SchoolManagementSystem.Main
 {
     public partial class LoginScreen : Form
     {
+        SMSContext context = new SMSContext();
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
@@ -65,7 +66,28 @@ namespace SchoolManagementSystem.Main
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            try
+            {
+                var uc = context.UserCredentials.FirstOrDefault(u => u.Username == txtUsername.Text && u.Password == txtPassword.Text);
+                if (uc == null)
+                {
+                    MessageBox.Show("Please enter correct Username or Password", "Invalid Input");
+                    return;
+                }
+                Globals.CUR_USER = uc;
+                this.Hide();
+                new Dashboard().Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException.ToString(), "Exception");
+            }
+        }
 
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                btnLogin.PerformClick();
         }
 
     }

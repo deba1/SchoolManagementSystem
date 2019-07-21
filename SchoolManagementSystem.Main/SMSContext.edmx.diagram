@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67cfc71d3a6f4bf6964e67a3c29cf560" Name="Diagram1" ZoomLevel="44">
+        <EntityTypeShape EntityType="SMSModel.ClassInfo" Width="1.5" PointX="0.625" PointY="4.25" />
+        <EntityTypeShape EntityType="SMSModel.ClassRoutine" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="SMSModel.CurriculumDetail" Width="1.5" PointX="6.5" PointY="5.125" />
+        <EntityTypeShape EntityType="SMSModel.DayInfo" Width="1.5" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="SMSModel.NoticeInfo" Width="1.5" PointX="11.75" PointY="7.375" />
+        <EntityTypeShape EntityType="SMSModel.ResultInfo" Width="1.5" PointX="3" PointY="6.5" />
+        <EntityTypeShape EntityType="SMSModel.SectionInfo" Width="1.5" PointX="3.75" PointY="13.625" />
+        <EntityTypeShape EntityType="SMSModel.StudentInfo" Width="1.5" PointX="1.125" PointY="8.375" />
+        <EntityTypeShape EntityType="SMSModel.SubjectInfo" Width="1.5" PointX="9" PointY="0.5" />
+        <EntityTypeShape EntityType="SMSModel.TeacherInfo" Width="1.5" PointX="13.125" PointY="3.5" />
+        <EntityTypeShape EntityType="SMSModel.UserCredential" Width="1.5" PointX="9.125" PointY="8.125" />
+        <EntityTypeShape EntityType="SMSModel.UserType" Width="1.5" PointX="9" PointY="13" />
+        <AssociationConnector Association="SMSModel.FK_CurriculumDetails_ClassInfo" />
+        <AssociationConnector Association="SMSModel.FK_SectionInfo_ClassInfo" />
+        <AssociationConnector Association="SMSModel.FK_StudentInfo_ClassInfo" />
+        <AssociationConnector Association="SMSModel.FK_ClassRoutine_DayInfo" />
+        <AssociationConnector Association="SMSModel.FK_ClassRoutine_SectionInfo" />
+        <AssociationConnector Association="SMSModel.FK_ClassRoutine_SubjectInfo" />
+        <AssociationConnector Association="SMSModel.FK_ClassRoutine_TeacherInfo" />
+        <AssociationConnector Association="SMSModel.FK_CurriculumDetails_SubjectInfo" />
+        <AssociationConnector Association="SMSModel.FK_NoticeInfo_SectionInfo" />
+        <AssociationConnector Association="SMSModel.FK_NoticeInfo_UserCredential" />
+        <AssociationConnector Association="SMSModel.FK_ResultInfo_CurriculumDetails" />
+        <AssociationConnector Association="SMSModel.FK_ResultInfo_StudentInfo" />
+        <AssociationConnector Association="SMSModel.FK_StudentInfo_SectionInfo" />
+        <AssociationConnector Association="SMSModel.FK_UserCredential_StudentInfo" />
+        <AssociationConnector Association="SMSModel.FK_TeacherInfo_SubjectInfo" />
+        <AssociationConnector Association="SMSModel.FK_UserCredential_TeacherInfo" />
+        <AssociationConnector Association="SMSModel.FK_UserType_UserCredential" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

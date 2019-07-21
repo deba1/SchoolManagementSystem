@@ -52,6 +52,12 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="MetroFramework">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
     </Reference>
@@ -62,7 +68,10 @@
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +82,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClassInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassManager.Designer.cs">
+      <DependentUpon>ClassManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRoutine.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClassRoutineManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassRoutineManager.Designer.cs">
+      <DependentUpon>ClassRoutineManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CurriculumDetail.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CurriculumDetailsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CurriculumDetailsManager.Designer.cs">
+      <DependentUpon>CurriculumDetailsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DayInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExtraFields.cs" />
     <Compile Include="Globals.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -80,10 +126,136 @@
     <Compile Include="LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="NoticeInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoticeManager.Designer.cs">
+      <DependentUpon>NoticeManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NoticeView.Designer.cs">
+      <DependentUpon>NoticeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverviewAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewAdmin.Designer.cs">
+      <DependentUpon>OverviewAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverviewStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewStudent.Designer.cs">
+      <DependentUpon>OverviewStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverviewTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewTeacher.Designer.cs">
+      <DependentUpon>OverviewTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResultManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResultManager.Designer.cs">
+      <DependentUpon>ResultManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SectionInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SectionManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SectionManager.Designer.cs">
+      <DependentUpon>SectionManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SMSContext.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMSContext.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMSContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SMSContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMSContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StudentInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StudentManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentManager.Designer.cs">
+      <DependentUpon>StudentManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SubjectManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubjectManager.Designer.cs">
+      <DependentUpon>SubjectManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherInfo.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TeacherManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TeacherManager.Designer.cs">
+      <DependentUpon>TeacherManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserCredential.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserType.cs">
+      <DependentUpon>SMSContext.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ClassManager.resx">
+      <DependentUpon>ClassManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassRoutineManager.resx">
+      <DependentUpon>ClassRoutineManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CurriculumDetailsManager.resx">
+      <DependentUpon>CurriculumDetailsManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoticeManager.resx">
+      <DependentUpon>NoticeManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NoticeView.resx">
+      <DependentUpon>NoticeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewAdmin.resx">
+      <DependentUpon>OverviewAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewStudent.resx">
+      <DependentUpon>OverviewStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewTeacher.resx">
+      <DependentUpon>OverviewTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -95,6 +267,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResultManager.resx">
+      <DependentUpon>ResultManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SectionManager.resx">
+      <DependentUpon>SectionManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentManager.resx">
+      <DependentUpon>StudentManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubjectManager.resx">
+      <DependentUpon>SubjectManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeacherManager.resx">
+      <DependentUpon>TeacherManager.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -105,6 +292,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="SMSContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SMSContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SMSContext.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMSContext.edmx</DependentUpon>
+      <LastGenOutput>SMSContext.Context.cs</LastGenOutput>
+    </None>
+    <None Include="SMSContext.edmx.diagram">
+      <DependentUpon>SMSContext.edmx</DependentUpon>
+    </None>
+    <None Include="SMSContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMSContext.edmx</DependentUpon>
+      <LastGenOutput>SMSContext.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -113,7 +317,7 @@
     <None Include="Resources\imgWelcome1.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\transparent.png" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
